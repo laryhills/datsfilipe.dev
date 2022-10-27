@@ -3,8 +3,6 @@ import { UserInfo } from '../UserInfo'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 
 export function MainComponent () {
-  const currentDir = new URL('.', import.meta.url).pathname
-
   return (
     <div className='w-screen h-screen text-neutral-900 dark:text-neutral-50 flex flex-col items-center justify-center'>
       <div className='text-7xl font-mplus font-bold z-10'>
@@ -21,7 +19,7 @@ export function MainComponent () {
         <BadApple
           width={90}
           height={50}
-          framesDir={`${currentDir}/../../../assets/frames`}
+          framesDir={'/frames'}
         />
       </div>
     </div>

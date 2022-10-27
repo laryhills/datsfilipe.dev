@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@datsfilipe/react-bad-apple': ^1.0.8
+  '@datsfilipe/react-bad-apple': ^1.0.10
   '@types/react': ^18.0.17
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.40.1
@@ -19,7 +19,7 @@ specifiers:
   vite: ^3.1.0
 
 dependencies:
-  '@datsfilipe/react-bad-apple': 1.0.8_react@18.2.0
+  '@datsfilipe/react-bad-apple': 1.0.10_react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
@@ -307,8 +307,8 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@datsfilipe/react-bad-apple/1.0.8_react@18.2.0:
-    resolution: {integrity: sha512-7B5iMvvKgDsYO2VgFj2nMZU0bKnhKL6pZt/3U1zWtlSdDOLxL9kyCZ6gUvChFanus1bCZa2QulMz+dYB/zKGBw==, tarball: download/@datsfilipe/react-bad-apple/1.0.8/545fa3a7417c9f7e02d6fd1ba9c37bdcc14c0451}
+  /@datsfilipe/react-bad-apple/1.0.10_react@18.2.0:
+    resolution: {integrity: sha512-0QQetX0yiK5LNFR6DnwkQCWgzBJfl95zj7NyGw2ls036ck5pNyRn+aPMUvLudv5TnAtc4yCH0nMOSRVByBELOw==, tarball: download/@datsfilipe/react-bad-apple/1.0.10/7179c78276f04f6049615959bf1c6c7944b3e100}
     peerDependencies:
       react: ^18.2.0
     dependencies:

@@ -20,6 +20,7 @@ export function MainComponent () {
           width={90}
           height={50}
           framesDir={'/frames'}
+          loop
         />
       </div>
     </div>

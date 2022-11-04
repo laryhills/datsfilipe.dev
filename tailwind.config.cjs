@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
+    './src/app/**/*.{js,ts,jsx,tsx}',
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   theme: {
@@ -10,8 +11,7 @@ module.exports = {
       sans: ['Inter', 'sans-serif'],
       mplus: ['"M PLUS Rounded 1c"', 'sans-serif'],
     },
-    extend: {
-    },
+    extend: {},
   },
   plugins: [],
 }

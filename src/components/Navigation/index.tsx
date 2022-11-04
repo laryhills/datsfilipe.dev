@@ -1,14 +1,14 @@
+import Link from 'next/link'
 import { Button } from '../Button'
-import { Link } from 'react-router-dom'
 import { FaHome, FaUser, FaCommentAlt, FaEnvelope } from 'react-icons/fa'
 
 export function Navigation () {
   return (
-    <div className='fixed z-10 bottom-4 w-screen flex items-center justify-center'>
+    <div className='flex fixed bottom-4 z-10 justify-center items-center w-screen'>
       <nav>
         <ul className='flex'>
           <li className='mx-5'>
-            <Link to='/'>
+            <Link href='/'>
               <Button>
                 <FaHome className='mr-2 text-2xl' />
                 Begining
@@ -16,7 +16,7 @@ export function Navigation () {
             </Link>
           </li>
           <li className='mx-5'>
-            <Link to='/about'>
+            <Link href='/about'>
               <Button>
                 <FaUser className='mr-2' />
                 About me
@@ -24,7 +24,7 @@ export function Navigation () {
             </Link>
           </li>
           <li className='mx-5'>
-            <Link to='/posts'>
+            <Link href='/posts'>
               <Button>
                 <FaCommentAlt className='mr-2' />
                 Posts
@@ -32,7 +32,7 @@ export function Navigation () {
             </Link>
           </li>
           <li className='mx-5'>
-            <Link to='/contact'>
+            <Link href='/contact'>
               <Button>
                 <FaEnvelope className='mr-2' />
                 Contact me

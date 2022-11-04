@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { HiSun, HiMoon } from 'react-icons/hi'
 
@@ -29,18 +31,18 @@ export function ToggleThemeBtn () {
   }, [theme])
 
   return (
-    <div className='p-1 w-fit justify-between items-center flex rounded-xl bg-zinc-100'>
+    <div className='flex justify-between items-center p-1 rounded-xl w-fit bg-zinc-100'>
       <button
         onClick={toggleTheme}
         aria-label='Toggle Theme'
-        className='p-2 flex items-center justify-center text-neutral-900 bg-amber-100 dark:bg-zinc-100 rounded-lg mr-1'
+        className='flex justify-center items-center p-2 mr-1 bg-amber-100 rounded-lg text-neutral-900 dark:bg-zinc-100'
       >
         <HiSun />
       </button>
       <button
         onClick={toggleTheme}
         aria-label='Toggle Theme'
-        className='p-2 flex items-center justify-center bg-zinc-100 text-neutral-900 dark:bg-zinc-300 rounded-lg'
+        className='flex justify-center items-center p-2 rounded-lg bg-zinc-100 text-neutral-900 dark:bg-zinc-300'
       >
         <HiMoon />
       </button>

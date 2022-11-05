@@ -6,7 +6,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 export function Button ({ children, ...props }: ButtonProps) {
   return (
-    <button {...props} className='flex items-center py-4 px-5 text-xl font-medium rounded-xl transition-all bg-stone-700 text-neutral-50 font-mplus dark:bg-zinc-300 dark:hover:bg-neutral-50 dark:text-stone-700 hover:bg-stone-800'>
+    <button {...props} className='flex items-center py-2 px-4 text-base font-medium rounded-md transition-all text-stone-300 bg-neutral-700 dark:bg-stone-400 dark:text-neutral-900 hover:brightness-125 hover:translate-y-[-4px]'>
       {children}
     </button> 
   )

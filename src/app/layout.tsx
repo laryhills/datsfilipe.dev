@@ -23,7 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <div className='flex flex-col w-full min-h-screen text-gray-900 bg-zinc-100 scroll-smooth dark:bg-zinc-800 dark:text-neutral-50'>
+        <div className='flex flex-col w-full min-h-screen scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900'>
           <Header />
           <Navigation />
           {children}

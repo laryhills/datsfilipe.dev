@@ -7,7 +7,7 @@ export function UserInfo () {
       />
       <div className='flex flex-col'>
         <strong>Filipe Lima</strong>
-        <span className='mt-2 text-stone-500 dark:text-stone-400'>Web Developer at Octal Dev</span>
+        <span className='mt-2 text-stone-500'>Web Developer at Octal Dev</span>
       </div>
     </div>
   )

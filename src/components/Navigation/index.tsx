@@ -10,8 +10,8 @@ export function Navigation () {
           <li className='mx-5'>
             <Link href='/'>
               <Button>
-                <FaHome className='mr-2 text-2xl' />
-                Begining
+                <FaHome className='mr-2 text-xl' />
+                beginning
               </Button>
             </Link>
           </li>
@@ -19,7 +19,7 @@ export function Navigation () {
             <Link href='/about'>
               <Button>
                 <FaUser className='mr-2' />
-                About me
+                about
               </Button>
             </Link>
           </li>
@@ -27,7 +27,7 @@ export function Navigation () {
             <Link href='/posts'>
               <Button>
                 <FaCommentAlt className='mr-2' />
-                Posts
+                posts
               </Button>
             </Link>
           </li>
@@ -35,7 +35,7 @@ export function Navigation () {
             <Link href='/contact'>
               <Button>
                 <FaEnvelope className='mr-2' />
-                Contact me
+                contact
               </Button>
             </Link>
           </li>

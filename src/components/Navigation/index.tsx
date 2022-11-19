@@ -1,93 +1,95 @@
 'use client'
-
-import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Button } from '../Button'
-import { FaHome, FaUser, FaCommentAlt, FaEnvelope } from 'react-icons/fa'
+import Link from 'next/link'
+
+type Dimensions = {
+  x: number;
+  w: number;
+}
 
 export function Navigation () {
-  // the animation should trigger on scroll, if down, then hide the nav, if up, then show the nav
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up')
-  const [lastScrollPosition, setLastScrollPosition] = useState(0)
-
-  const handleScroll = () => {
-    const currentScrollPosition = window.pageYOffset
-    if (currentScrollPosition < 0) {
-      setScrollDirection('up')
-    } else if (currentScrollPosition > lastScrollPosition) {
-      setScrollDirection('down')
-    } else {
-      setScrollDirection('up')
-    }
-    setLastScrollPosition(currentScrollPosition)
+  const [motionDivPosition, setMotionDivPosition] = useState<Dimensions>({
+    w: 0,
+    x: 0
+  })
+  const navigationButtons = {
+    home: useRef<HTMLLIElement>(null),
+    about: useRef<HTMLLIElement>(null),
+    contact: useRef<HTMLLIElement>(null)
   }
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollPosition, scrollDirection])
-
   const variants = {
-    up: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3
-      }
-    },
-    down: {
-      y: '-100%',
-      opacity: 0,
-      transition: {
-        duration: 0.3
-      }
+    animate: {
+      x: motionDivPosition?.x ? motionDivPosition.x - 10 : 0,
+      width: motionDivPosition?.w ? motionDivPosition.w + 20 : 0
     }
   }
 
   return (
-    <motion.div
-      className='flex fixed bottom-4 z-10 justify-center items-center w-screen'
-      variants={variants}
-      initial='up'
-      animate={scrollDirection}
-    >
-      <nav>
-        <ul className='flex'>
-          <li className='mx-5'>
+    <div className='flex absolute right-0 left-0 justify-center items-center mx-auto h-full font-medium w-fit'>
+      <nav className='flex items-center h-full'>
+        <ul
+          className='flex relative'
+          onMouseLeave={() => {
+            setMotionDivPosition({ x: 20, w: 0 })
+          }}
+        >
+          <motion.div
+            className='absolute self-center h-8 rounded-md dark:bg-opacity-50 -z-10 dark:bg-zinc-600' 
+            variants={variants}
+            initial='initial'
+            animate='animate'
+            transition={{
+              type: 'spring',
+              stiffness: 500,
+              damping: 30
+            }}
+          />
+          <li
+            className='flex items-center mx-5 h-full'
+            onMouseOver={() => {
+              if (!navigationButtons.home.current) return
+              setMotionDivPosition({ x: navigationButtons.home.current.offsetLeft, w: navigationButtons.home.current.offsetWidth })
+            }}
+            ref={navigationButtons.home}
+          >
             <Link href='/'>
-              <Button>
-                <FaHome className='mr-2 text-xl' />
-                beginning
-              </Button>
+              Beginning
             </Link>
           </li>
-          <li className='mx-5'>
+          <li
+            className='flex items-center mx-5 h-full'
+            onMouseOver={() => {
+              if (!navigationButtons.about.current) return
+              setMotionDivPosition({ x: navigationButtons.about.current.offsetLeft, w: navigationButtons.about.current.offsetWidth })
+            }}
+            ref={navigationButtons.about}
+          >
             <Link href='/about'>
-              <Button>
-                <FaUser className='mr-2' />
-                about
-              </Button>
+              About
             </Link>
           </li>
-          <li className='mx-5'>
+          {/*<li className='mx-5'>
             <Link href='/posts'>
-              <Button>
-                <FaCommentAlt className='mr-2' />
-                posts
-              </Button>
+              posts
             </Link>
-          </li>
-          <li className='mx-5'>
+          </li>*/}
+          <li
+            className='flex items-center mx-5 h-full'
+            onMouseOver={() => {
+              if (!navigationButtons.contact.current) return
+              setMotionDivPosition({ x: navigationButtons.contact.current.offsetLeft, w: navigationButtons.contact.current.offsetWidth })
+            }}
+            ref={navigationButtons.contact}
+          >
             <Link href='/contact'>
-              <Button>
-                <FaEnvelope className='mr-2' />
-                contact
-              </Button>
+              Contact
             </Link>
           </li>
         </ul>
       </nav>
-    </motion.div>
+    </div>
   )
 }

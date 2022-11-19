@@ -10,22 +10,70 @@ type Dimensions = {
 }
 
 export function Navigation () {
+  const pathname = usePathname()
+
   const [motionDivPosition, setMotionDivPosition] = useState<Dimensions>({
     w: 0,
     x: 0
   })
+
   const navigationButtons = {
     home: useRef<HTMLLIElement>(null),
     about: useRef<HTMLLIElement>(null),
     contact: useRef<HTMLLIElement>(null)
   }
 
+  const initialPosition = () => {
+    if (pathname === '/') {
+      if (!navigationButtons.home.current) return {
+        x: 0,
+        width: 0
+      }
+
+      return {
+        x: navigationButtons.home.current.offsetLeft,
+        width: navigationButtons.home.current.offsetWidth
+      }
+    } else if (pathname === '/about') {
+      if (!navigationButtons.about.current) return {
+        x: 0,
+        width: 0
+      }
+
+      return {
+        x: navigationButtons.about.current.offsetLeft,
+        width: navigationButtons.about.current.offsetWidth
+      }
+    } else if (pathname === '/contact') {
+      if (!navigationButtons.contact.current) return {
+        x: 0,
+        width: 0
+      }
+
+      return {
+        x: navigationButtons.contact.current.offsetLeft,
+        width: navigationButtons.contact.current.offsetWidth
+      }
+    } 
+  }
+
   const variants = {
     animate: {
       x: motionDivPosition?.x ? motionDivPosition.x - 10 : 0,
       width: motionDivPosition?.w ? motionDivPosition.w + 20 : 0
+    },
+    initial: {
+      x: initialPosition()?.x || 0,
+      width: initialPosition()?.width || 0
     }
   }
+
+  useEffect(() => {
+    setMotionDivPosition({
+      x: initialPosition()?.x || 0,
+      w: initialPosition()?.width || 0
+    })
+  }, [navigationButtons.home?.current, navigationButtons.about?.current, navigationButtons.contact?.current, pathname])
 
   return (
     <div className='flex absolute right-0 left-0 justify-center items-center mx-auto h-full font-medium w-fit'>
@@ -33,7 +81,10 @@ export function Navigation () {
         <ul
           className='flex relative'
           onMouseLeave={() => {
-            setMotionDivPosition({ x: 20, w: 0 })
+            setMotionDivPosition({
+              x: initialPosition()?.x || 0,
+              w: initialPosition()?.width || 0
+            })
           }}
         >
           <motion.div

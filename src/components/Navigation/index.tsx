@@ -88,7 +88,7 @@ export function Navigation () {
           }}
         >
           <motion.div
-            className='absolute self-center h-8 rounded-md dark:bg-opacity-50 -z-10 dark:bg-zinc-600' 
+            className='absolute self-center h-8 bg-opacity-50 rounded-md dark:bg-opacity-50 bg-stone-400 -z-10 dark:bg-zinc-600' 
             variants={variants}
             initial='initial'
             animate='animate'

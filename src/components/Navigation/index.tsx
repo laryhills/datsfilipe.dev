@@ -2,6 +2,7 @@
 import { usePathname } from 'next/navigation'
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { FaCircle } from 'react-icons/fa'
 import Link from 'next/link'
 
 type Dimensions = {
@@ -75,6 +76,8 @@ export function Navigation () {
     })
   }, [navigationButtons.home?.current, navigationButtons.about?.current, navigationButtons.contact?.current, pathname])
 
+  const screenSize = typeof window !== 'undefined' ? window.innerWidth : 0
+
   return (
     <div className='flex absolute right-0 left-0 justify-center items-center mx-auto h-full font-medium w-fit'>
       <nav className='flex items-center h-full'>
@@ -99,7 +102,7 @@ export function Navigation () {
             }}
           />
           <li
-            className='flex items-center mx-5 h-full'
+            className='flex items-center mx-5 h-full max-xl:'
             onMouseOver={() => {
               if (!navigationButtons.home.current) return
               setMotionDivPosition({ x: navigationButtons.home.current.offsetLeft, w: navigationButtons.home.current.offsetWidth })
@@ -107,7 +110,11 @@ export function Navigation () {
             ref={navigationButtons.home}
           >
             <Link href='/'>
-              Beginning
+              {
+                pathname === '/' && screenSize < 768 ? (
+                  <FaCircle className='mt-1 text-base text-stone-400 dark:text-zinc-600' />
+                ) : 'Beginning'
+              }
             </Link>
           </li>
           <li
@@ -119,14 +126,13 @@ export function Navigation () {
             ref={navigationButtons.about}
           >
             <Link href='/about'>
-              About
+              {
+                pathname === '/about' && screenSize < 768 ? (
+                  <FaCircle className='mt-1 text-base text-stone-400 dark:text-zinc-600' />
+                ) : 'About'
+              }
             </Link>
           </li>
-          {/*<li className='mx-5'>
-            <Link href='/posts'>
-              posts
-            </Link>
-          </li>*/}
           <li
             className='flex items-center mx-5 h-full'
             onMouseOver={() => {
@@ -136,7 +142,11 @@ export function Navigation () {
             ref={navigationButtons.contact}
           >
             <Link href='/contact'>
-              Contact
+              {
+                pathname === '/contact' && screenSize < 768 ? (
+                  <FaCircle className='mt-1 text-base text-stone-400 dark:text-zinc-600' />
+                ) : 'Contact'
+              }
             </Link>
           </li>
         </ul>

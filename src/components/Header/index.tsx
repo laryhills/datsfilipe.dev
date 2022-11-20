@@ -1,9 +1,10 @@
 import { ToggleThemeBtn } from '../ToggleThemeBtn'
+import { Navigation } from '../Navigation'
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 export function Header () {
   return (
-    <header className='flex fixed z-10 justify-between items-center p-2 w-screen bg-transparent'>
+    <header className='flex fixed z-10 justify-between items-center p-4 w-screen bg-opacity-20 dark:bg-opacity-5 bg-neutral-100 backdrop-blur-sm dark:bg-neutral-700'>
       <div className='flex items-center'>
         <h2 className='text-xl font-bold text-orange-500 font-mplus'>datsfilipe</h2>
         <a
@@ -31,6 +32,7 @@ export function Header () {
           <FaTwitter />
         </a>
       </div>
+      <Navigation />
       <ToggleThemeBtn />
     </header>
   )

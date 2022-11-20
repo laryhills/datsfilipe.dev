@@ -17,10 +17,10 @@ export default function About () {
           width={500}
           height={500}
           alt='Filipe Lima, me.'
-          className='rounded-xl shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
+          className='max-w-xl shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
         />
         <div className='ml-12'>
-          <Title>
+          <Title className='font-serif'>
             I&apos;m Filipe Lima, a Front-end Web Developer working remotely from Brazil.
           </Title>
           <Paragraph className='mt-10 text-lg text-neutral-700 dark:text-neutral-200'>
@@ -35,7 +35,7 @@ export default function About () {
         </div>
       </Section>
       <Section className='flex-col mx-auto mt-12 w-3/5'>
-        <Title className='mb-10 ml-auto w-fit'>
+        <Title className='mb-10 ml-auto font-serif w-fit'>
           A brief history (being written)
         </Title>
         <CardsList listId={0}>
@@ -99,7 +99,7 @@ export default function About () {
         </CardsList>
       </Section>
       <Section className='flex-col mx-auto mt-12 w-3/5'>
-        <Title className='mr-auto mb-10 w-fit'>
+        <Title className='mr-auto mb-10 font-serif w-fit'>
           Side Projects
         </Title>
         <CardsList listId={1}>

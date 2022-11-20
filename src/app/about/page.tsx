@@ -5,6 +5,7 @@ import { Card } from '../../components/Card'
 import { CustomLink } from '../../components/CustomLink'
 import { MdCircle } from 'react-icons/md'
 import Image from 'next/image'
+import { CardsList } from '../../components/CardsList'
 
 export default function About () {
   return (
@@ -37,7 +38,7 @@ export default function About () {
         <Title className='mb-10 ml-auto w-fit'>
           A brief history (being written)
         </Title>
-        <div className='[&>*]:mb-5'>
+        <CardsList listId={0}>
           <Card>
             <div className='mr-2 w-32 h-full'>
               2022 - Now
@@ -76,13 +77,13 @@ export default function About () {
               </div>
             </div>
           </Card>
-        </div>
+        </CardsList>
       </Section>
       <Section className='flex-col mx-auto mt-12 w-3/5'>
         <Title className='mr-auto mb-10 w-fit'>
           Side Projects
         </Title>
-        <div className='[&>*]:mb-5'>
+        <CardsList listId={1}>
           <Card>
             <div className='mr-2 w-32 h-full'>
               2022
@@ -159,10 +160,10 @@ export default function About () {
               </div>
             </div>
           </Card>
-          <Paragraph className='text-neutral-600 dark:text-neutral-400'>
-            In order to see more of my personal projects/repositorys, please visit my github profile and take a look, here&apos;s the link:&nbsp;<CustomLink href='https://github.com/datsfilipe' target='_blank'>datsfilipe</CustomLink>
-          </Paragraph>
-        </div>
+        </CardsList>
+        <Paragraph className='text-neutral-600 dark:text-neutral-400'>
+          In order to see more of my personal projects/repositorys, please visit my github profile and take a look, here&apos;s the link:&nbsp;<CustomLink href='https://github.com/datsfilipe' target='_blank'>datsfilipe</CustomLink>
+        </Paragraph>
       </Section>
     </div>
   )

@@ -10,16 +10,16 @@ import { CardsList } from '../../components/CardsList'
 export default function About () {
   return (
     <div className='pb-12 mx-auto w-10/12'>
-      <Section>
+      <Section className='max-xl:flex-col [&>*]:mt-12 max-xl:mt-10'>
         <Image
           src='https://github.com/datsfilipe.png'
           quality={100}
           width={500}
           height={500}
           alt='Filipe Lima, me.'
-          className='max-w-xl shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
+          className='shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
         />
-        <div className='ml-12'>
+        <div className='ml-12 max-xl:ml-0'>
           <Title className='font-serif'>
             I&apos;m Filipe Lima, a Front-end Web Developer working remotely from Brazil.
           </Title>
@@ -34,7 +34,7 @@ export default function About () {
           </Paragraph>
         </div>
       </Section>
-      <Section className='flex-col mx-auto mt-12 w-3/5'>
+      <Section className='flex-col mx-auto mt-12 max-w-[50rem]'>
         <Title className='mb-10 ml-auto font-serif w-fit'>
           A brief history (being written)
         </Title>
@@ -98,7 +98,7 @@ export default function About () {
           </Card>
         </CardsList>
       </Section>
-      <Section className='flex-col mx-auto mt-12 w-3/5'>
+      <Section className='flex-col mx-auto mt-12 max-w-[50rem]'>
         <Title className='mr-auto mb-10 font-serif w-fit'>
           Side Projects
         </Title>

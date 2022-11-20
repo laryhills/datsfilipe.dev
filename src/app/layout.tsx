@@ -1,6 +1,5 @@
 import { CopyrightMark } from '../components/CopyrightMark'
 import { Header } from '../components/Header'
-import { Navigation } from '../components/Navigation'
 
 import './globals.css'
 import { ReactElement } from 'react'
@@ -24,9 +23,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <div className='flex flex-col w-full min-h-screen h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900'>
+        <div className='flex flex-col w-full min-h-screen selection:bg-orange-500 selection:bg-opacity-30 h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900'>
           <Header />
-          <Navigation />
           {children}
           <CopyrightMark />
         </div>

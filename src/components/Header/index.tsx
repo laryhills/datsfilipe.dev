@@ -9,7 +9,7 @@ export function Header () {
         <h2 className='text-xl font-bold text-orange-500 font-mplus'>datsfilipe</h2>
         <a
           href='https://github.com/datsfilipe'
-          className='ml-3 text-xl transition-all hover:text-2xl hover:text-orange-500 text-stone-700 dark:text-stone-100 hover:dark:text-orange-500'
+          className='ml-3 text-xl transition-all hover:text-2xl hover:text-orange-500 text-stone-600 dark:text-neutral-300 hover:dark:text-orange-500'
           target='_blank'
           rel='noreferrer'
         >
@@ -17,7 +17,7 @@ export function Header () {
         </a>
         <a
           href='https://www.linkedin.com/in/datsfilipe'
-          className='ml-3 text-xl transition-all hover:text-2xl hover:text-orange-500 text-stone-700 dark:text-stone-100 hover:dark:text-orange-500'
+          className='ml-3 text-xl transition-all hover:text-2xl hover:text-orange-500 text-stone-600 dark:text-neutral-300 hover:dark:text-orange-500'
           target='_blank'
           rel='noreferrer'
         >
@@ -25,7 +25,7 @@ export function Header () {
         </a>
         <a
           href='https://twitter.com/datsfilipe1'
-          className='ml-3 text-xl transition-all hover:text-2xl hover:text-orange-500 text-stone-700 dark:text-stone-100 hover:dark:text-orange-500'
+          className='ml-3 text-xl transition-all hover:text-2xl hover:text-orange-500 text-stone-600 dark:text-neutral-300 hover:dark:text-orange-500'
           target='_blank'
           rel='noreferrer'
         >

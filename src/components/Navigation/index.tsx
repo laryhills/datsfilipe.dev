@@ -13,6 +13,7 @@ type Dimensions = {
 export function Navigation () {
   const pathname = usePathname()
 
+  const [screenSize, setScreenSize] = useState<number>(typeof window !== 'undefined' ? window.innerWidth : 0)
   const [motionDivPosition, setMotionDivPosition] = useState<Dimensions>({
     w: 0,
     x: 0
@@ -74,9 +75,17 @@ export function Navigation () {
       x: initialPosition()?.x || 0,
       w: initialPosition()?.width || 0
     })
-  }, [navigationButtons.home?.current, navigationButtons.about?.current, navigationButtons.contact?.current, pathname])
+  }, [navigationButtons.home?.current, navigationButtons.about?.current, navigationButtons.contact?.current, pathname, screenSize > 768, screenSize < 768])
 
-  const screenSize = typeof window !== 'undefined' ? window.innerWidth : 0
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setScreenSize(window.innerWidth)
+    })
+
+    return () => window.removeEventListener('resize', () => {
+      setScreenSize(window.innerWidth)
+    })
+  }, [])
 
   return (
     <div className='flex absolute right-0 left-0 justify-center items-center mx-auto h-full font-medium w-fit'>
@@ -102,7 +111,7 @@ export function Navigation () {
             }}
           />
           <li
-            className='flex items-center mx-5 h-full max-xl:'
+            className='flex items-center mx-5 h-full max-md:mx-2'
             onMouseOver={() => {
               if (!navigationButtons.home.current) return
               setMotionDivPosition({ x: navigationButtons.home.current.offsetLeft, w: navigationButtons.home.current.offsetWidth })
@@ -118,7 +127,7 @@ export function Navigation () {
             </Link>
           </li>
           <li
-            className='flex items-center mx-5 h-full'
+            className='flex items-center mx-5 h-full max-md:mx-2'
             onMouseOver={() => {
               if (!navigationButtons.about.current) return
               setMotionDivPosition({ x: navigationButtons.about.current.offsetLeft, w: navigationButtons.about.current.offsetWidth })
@@ -134,7 +143,7 @@ export function Navigation () {
             </Link>
           </li>
           <li
-            className='flex items-center mx-5 h-full'
+            className='flex items-center mx-5 h-full max-md:mx-2'
             onMouseOver={() => {
               if (!navigationButtons.contact.current) return
               setMotionDivPosition({ x: navigationButtons.contact.current.offsetLeft, w: navigationButtons.contact.current.offsetWidth })

@@ -2,7 +2,7 @@ import { CopyrightMark } from '../components/CopyrightMark'
 import { Header } from '../components/Header'
 
 import './globals.css'
-import { ReactElement } from 'react'
+import type { ReactElement } from 'react'
 
 interface RootLayoutProps {
   children: ReactElement;

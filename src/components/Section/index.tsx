@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion'
-
 import { HTMLAttributes, ReactNode } from 'react'
 
 interface SectionProps extends HTMLAttributes<HTMLTableSectionElement> {

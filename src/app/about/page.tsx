@@ -17,7 +17,7 @@ export default function About () {
           width={500}
           height={500}
           alt='Filipe Lima, me.'
-          className='rounded-xl shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-[#222222] dark:hover:shadow-[#222222] hover:shadow-neutral-800'
+          className='rounded-xl shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
         />
         <div className='ml-12'>
           <Title>

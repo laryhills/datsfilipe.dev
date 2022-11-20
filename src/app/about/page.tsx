@@ -45,7 +45,7 @@ export default function About () {
             </div>
             <div className='w-full'>
               <em className='flex'>
-                Front-end Developer -&nbsp;<CustomLink href='' target='_blank'>Octal Dev</CustomLink>
+                Front-end Developer -&nbsp;<CustomLink href='https://casadosdados.com.br/solucao/cnpj/octaldev-solucoes-e-tecnologia-ltda-40237988000121' target='_blank'>Octal Dev</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
                 Creator of tools such as the component library and the boilerplates being used alongside the projects. Currently building an website for users to find and allocate buffets for events like an e-commerce platform. Collaborated closely with the the project managers to track the objectives and stabilish deliveries.
@@ -60,11 +60,30 @@ export default function About () {
           </Card>
           <Card>
             <div className='mr-2 w-32 h-full'>
+              2018 - 2018
+            </div>
+            <div className='w-full'>
+              <em className='flex'>
+                Monitor in Computer Technician Course Extension Project -&nbsp;<CustomLink href='https://portal.ifma.edu.br/inicio' target='_blank'>IFMA</CustomLink>
+              </em>
+              <Paragraph className='mt-2 mb-2'>
+                I was a monitor in the Computer Technician Course Extension Project, whose objective was to bring this knowledge to students from other technical courses. 60 hours of workload.
+              </Paragraph>
+              <div className='flex flex-wrap items-center'>
+                <span className='flex items-center'><MdCircle />&nbsp;Windows</span>&nbsp;
+                <span className='flex items-center'><MdCircle />&nbsp;Office</span>&nbsp;
+                <span className='flex items-center'><MdCircle />&nbsp;Internet</span>&nbsp;
+                <span className='flex items-center'><MdCircle />&nbsp;Hardware</span>&nbsp;
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <div className='mr-2 w-32 h-full'>
               2018 - 2021
             </div>
             <div className='w-full'>
               <em className='flex'>
-                Computer Technician - IFMA
+                Computer Technician -&nbsp;<CustomLink href='https://portal.ifma.edu.br/inicio' target='_blank'>IFMA</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
                 I was an excellent programming student, which gave me the opportunity to participate in events such as FLISOL (Latin American Free Software Installation Festival), where I fell in love with Linux and open source. I finished high school as a Computer Technician at the Federal Institute of Maranhão.

@@ -1,6 +1,6 @@
 export function UserInfo () {
   return (
-      <div className='flex items-center font-sans text-lg'>
+    <div className='flex items-center font-sans text-lg'>
       <img
         src='https://github.com/datsfilipe.png'
         className='mr-4 w-28 h-28 rounded-full'

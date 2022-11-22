@@ -8,18 +8,36 @@ import Image from 'next/image'
 import { CardsList } from '../../components/CardsList'
 
 export default function About () {
+  const comeFromLeftAnimation = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 }
+  }
+
+  const comeFromRightAnimation = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 }
+  }
+
+  const comeFromBottomAnimation = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
     <div className='pb-12 mx-auto w-10/12'>
-      <Section className='max-xl:flex-col [&>*]:mt-12 max-xl:mt-10'>
+      <Section
+        className='max-lg:flex-col [&>*]:mt-12 max-xl:mt-10'
+        variants={comeFromBottomAnimation}
+      >
         <Image
           src='https://github.com/datsfilipe.png'
           quality={100}
           width={500}
           height={500}
           alt='Filipe Lima, me.'
-          className='shadow-lg transition-all hover:mb-2 hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
+          className='rounded-3xl shadow-lg transition-all hover:shadow-xl shadow-neutral-800 dark:shadow-black dark:hover:shadow-black hover:shadow-neutral-800'
         />
-        <div className='ml-12 max-xl:ml-0'>
+        <div className='ml-12 max-xl:max-w-3xl max-2xl:max-w-4xl max-lg:ml-0'>
           <Title className='font-serif'>
             I&apos;m Filipe Lima, a Front-end Web Developer working remotely from Brazil.
           </Title>
@@ -34,17 +52,20 @@ export default function About () {
           </Paragraph>
         </div>
       </Section>
-      <Section className='flex-col mx-auto mt-12 max-w-[50rem]'>
+      <Section
+        className='flex-col mx-auto mt-12 max-w-[50rem]'
+        variants={comeFromLeftAnimation}
+      >
         <Title className='mb-10 ml-auto font-serif w-fit'>
           A brief history (being written)
         </Title>
         <CardsList listId={0}>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2022 - Now
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 Front-end Developer -&nbsp;<CustomLink href='https://casadosdados.com.br/solucao/cnpj/octaldev-solucoes-e-tecnologia-ltda-40237988000121' target='_blank'>Octal Dev</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
@@ -59,11 +80,11 @@ export default function About () {
             </div>
           </Card>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2018 - 2018
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 Monitor in Computer Technician Course Extension Project -&nbsp;<CustomLink href='https://portal.ifma.edu.br/inicio' target='_blank'>IFMA</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
@@ -78,11 +99,11 @@ export default function About () {
             </div>
           </Card>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2018 - 2021
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 Computer Technician -&nbsp;<CustomLink href='https://portal.ifma.edu.br/inicio' target='_blank'>IFMA</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
@@ -98,17 +119,20 @@ export default function About () {
           </Card>
         </CardsList>
       </Section>
-      <Section className='flex-col mx-auto mt-12 max-w-[50rem]'>
+      <Section
+        className='flex-col mx-auto mt-12 max-w-[50rem]'
+        variants={comeFromRightAnimation}
+      >
         <Title className='mr-auto mb-10 font-serif w-fit'>
           Side Projects
         </Title>
         <CardsList listId={1}>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2022
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 React Bad Apple -&nbsp;<CustomLink href='https://github.com/datsfilipe/react-bad-apple' target='_blank'>Repository</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
@@ -123,11 +147,11 @@ export default function About () {
             </div>
           </Card>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2021
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 Ignews -&nbsp;<CustomLink href='https://github.com/datsfilipe/ignews' target='_blank'>Repository</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
@@ -142,11 +166,11 @@ export default function About () {
             </div>
           </Card>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2022
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 React Jokenpo -&nbsp;<CustomLink href='https://github.com/datsfilipe/react-jokenpo' target='_blank'>Repository</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>
@@ -161,11 +185,11 @@ export default function About () {
             </div>
           </Card>
           <Card>
-            <div className='mr-2 w-32 h-full'>
+            <div className='mr-2 w-32 h-full max-md:w-16'>
               2022
             </div>
             <div className='w-full'>
-              <em className='flex'>
+              <em className='flex flex-wrap'>
                 datsfilipe.dev -&nbsp;<CustomLink href='https://github.com/datsfilipe/datsfilipe.dev' target='_blank'>Repository</CustomLink>
               </em>
               <Paragraph className='mt-2 mb-2'>

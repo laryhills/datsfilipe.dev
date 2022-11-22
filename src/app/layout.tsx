@@ -1,4 +1,7 @@
-import { Inter, M_PLUS_Rounded_1c, Merriweather } from '@next/font/google'
+import { Inter as FontSans, M_PLUS_Rounded_1c as FontMplus, Merriweather as FontSerif } from '@next/font/google'
+import { clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+import { Toast } from '../components/Toast'
 
 import { CopyrightMark } from '../components/CopyrightMark'
 import { Header } from '../components/Header'
@@ -10,21 +13,21 @@ interface RootLayoutProps {
   children: ReactElement;
 }
 
-const inter = Inter({
+const fontSans = FontSans({
   subsets: ['latin'],
-  variable: '--inter-font'
+  variable: '--font-inter'
 })
 
-const mplus = M_PLUS_Rounded_1c({
+const fontMplus = FontMplus({
   subsets: ['latin'],
   weight: ['500', '700'],
-  variable: '--mplus-font'
+  variable: '--font-mplus'
 })
 
-const merriweather = Merriweather({
+const fontSerif = FontSerif({
   subsets: ['latin'],
-  variable: '--merriweather-font',
-  weight: ['400', '700']
+  weight: ['400', '700'],
+  variable: '--font-merriweather'
 })
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -36,11 +39,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <title>datsfilipe website</title>
       </head>
       <body>
-        <div className={`${inter.variable} ${mplus.variable} ${merriweather.variable} flex flex-col w-full min-h-screen selection:bg-orange-500 selection:bg-opacity-30 h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900`}>
+        <div className={twMerge(clsx(
+          'flex flex-col w-full min-h-screen selection:bg-orange-500 selection:bg-opacity-30 h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900',
+          fontSans.variable,
+          fontMplus.variable,
+          fontSerif.variable
+        ))}>
           <Header />
           {children}
           <CopyrightMark />
         </div>
+        <Toast />
       </body>
     </html>
   )

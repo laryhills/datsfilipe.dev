@@ -40,6 +40,9 @@ export default function Contact () {
 
   return (
     <div className='flex flex-col justify-center items-center mx-10 min-h-screen'>
+      <head>
+        <title>datsfilipe | Contact</title>
+      </head>
       <main className='flex flex-col items-center w-full max-w-3xl'>
         <Title className='my-14 text-8xl max-md:text-5xl font-mplus'>Say Hello!</Title>
         <form onSubmit={handleSendEmail} className='flex flex-col [&>*]:mb-4 [&>button]:mt-6 w-full'>

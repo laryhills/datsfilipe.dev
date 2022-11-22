@@ -25,6 +25,9 @@ export default function About () {
 
   return (
     <div className='pb-12 mx-auto w-10/12'>
+      <head>
+        <title>datsfilipe | About</title>
+      </head>
       <Section
         className='max-lg:flex-col [&>*]:mt-12 max-xl:mt-10'
         variants={comeFromBottomAnimation}

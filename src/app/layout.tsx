@@ -34,11 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       lang="en"
       className={`${fontSans.variable} ${fontMplus.variable} ${fontSerif.variable}`}
     >
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-      </head>
+      <head />
       <body>
         <div className='flex flex-col w-full min-h-screen selection:bg-orange-500 selection:bg-opacity-30 h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900'>
           <Header />

@@ -42,7 +42,7 @@ export function CardsList ({ children, listId }: CardsListProps) {
                 exit={{ opacity: 0 }}
               >
                 <div className='mx-auto mt-[calc(100vh-55vh)] max-w-4xl h-fit'>
-                  <div className='flex relative justify-end'>
+                  <div className='flex relative justify-end mx-4'>
                     {children[selectedId % 10 - 1]}
                     <motion.button
                       layoutId={`${selectedId}close`}

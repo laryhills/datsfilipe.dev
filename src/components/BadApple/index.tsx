@@ -9,6 +9,11 @@ export function BadApple () {
       height={50}
       framesDir={'/frames'}
       loop
+      customStyles={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
     />
   )
 }

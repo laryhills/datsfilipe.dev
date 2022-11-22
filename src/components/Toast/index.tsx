@@ -3,9 +3,16 @@ import { Toaster } from 'react-hot-toast'
 
 export function Toast() {
   const getTheme = () => {
-    const themeInfo = localStorage.getItem('theme-info') as 'light' | 'dark'
-    if (typeof localStorage !== 'undefined' && themeInfo) return themeInfo
-    if (window.matchMedia('(prefers-colorscheme: dark)').matches) return 'dark'
+    if (typeof localStorage !== 'undefined') {
+      const themeInfo = localStorage.getItem('theme-info') as 'light' | 'dark'
+      if (themeInfo) return themeInfo
+    }
+
+    if (typeof window !== 'undefined') {
+      const themeInfo = window.matchMedia('(prefers-color-scheme: dark)')
+      if (themeInfo.matches) return 'dark'
+    }
+
     return 'light'
   }
 

@@ -1,15 +1,29 @@
+'use client'
+import type { MotionProps } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { HTMLAttributes, ReactNode } from 'react'
 
 interface SectionProps extends HTMLAttributes<HTMLTableSectionElement> {
-  children?: ReactNode;
+  children?: ReactNode[];
 }
 
-export function Section ({ children, ...props }: SectionProps) {
-  const { className, ...rest } = props
+export function Section ({ children, ...props }: SectionProps & MotionProps) {
+  const { className, variants, ...rest } = props
 
   return (
-    <section className={`flex items-center min-h-screen ${className}`} {...rest}>
-      {children}
-    </section>
+    <motion.section className={`flex items-center min-h-screen ${className ? className : ''}`} {...rest}>
+      {children?.map((child: ReactNode, index: number) => (
+        <motion.div
+          key={index}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+          variants={variants}
+        >
+          {child}
+        </motion.div>
+      ))}
+    </motion.section>
   )
 }

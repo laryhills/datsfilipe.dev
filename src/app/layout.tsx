@@ -1,6 +1,4 @@
 import { Inter as FontSans, M_PLUS_Rounded_1c as FontMplus, Merriweather as FontSerif } from '@next/font/google'
-import { clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
 import { Toast } from '../components/Toast'
 
 import { CopyrightMark } from '../components/CopyrightMark'
@@ -32,19 +30,17 @@ const fontSerif = FontSerif({
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${fontSans.variable} ${fontMplus.variable} ${fontSerif.variable}`}
+    >
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/icon.png" type="image/png" />
       </head>
       <body>
-        <div className={twMerge(clsx(
-          'flex flex-col w-full min-h-screen selection:bg-orange-500 selection:bg-opacity-30 h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900',
-          fontSans.variable,
-          fontMplus.variable,
-          fontSerif.variable
-        ))}>
+        <div className='flex flex-col w-full min-h-screen selection:bg-orange-500 selection:bg-opacity-30 h-fit scroll-smooth bg-neutral-50 text-neutral-900 dark:text-neutral-50 dark:bg-neutral-900'>
           <Header />
           {children}
           <CopyrightMark />

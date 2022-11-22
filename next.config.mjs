@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  reactStrictMode: true,
   experimental: {
     appDir: true,
     fontLoaders: [
@@ -8,10 +9,9 @@ const nextConfig = {
     ]
   },
   images: {
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;',
-    domains: ['github.com']
+    domains: ['avatars.githubusercontent.com']
   },
+  swcMinify: false
 }
 
 export default nextConfig

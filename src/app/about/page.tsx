@@ -33,7 +33,7 @@ export default function About () {
         variants={comeFromBottomAnimation}
       >
         <Image
-          src='https://github.com/datsfilipe.png'
+          src='https://avatars.githubusercontent.com/u/76636791?v=4'
           quality={100}
           width={500}
           height={500}

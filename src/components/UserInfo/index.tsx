@@ -2,7 +2,7 @@ export function UserInfo () {
   return (
     <div className='flex items-center font-sans text-lg'>
       <img
-        src='https://github.com/datsfilipe.png'
+        src='https://avatars.githubusercontent.com/u/76636791?v=4'
         className='mr-4 w-28 h-28 rounded-full'
       />
       <div className='flex flex-col'>

@@ -36,7 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>datsfilipe website</title>
+        <link rel="icon" href="/icon.png" type="image/png" />
       </head>
       <body>
         <div className={twMerge(clsx(

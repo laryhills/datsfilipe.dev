@@ -8,6 +8,6 @@ export function Paragraph ({ children, ...props }: ParagraphProps) {
   const { className, ...rest } = props
 
   return (
-    <p className={`text-justify ${className}`} {...rest}>{children}</p>
+    <p className={`text-justify ${className ? className : ''}`} {...rest}>{children}</p>
   )
 }
